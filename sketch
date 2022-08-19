@@ -1,0 +1,42 @@
+function setup() {
+  createCanvas(1000, 350);
+  frameRate(30);
+}
+
+function draw() {
+  background(220);
+  //image(img2, 0,0,1000,400);
+  image(img, 0,0,1000,350);
+  image(vetorImgSprit[contSprit], x, y);
+  
+  //comtroles
+  
+  if(keyIsDown(RIGHT_ARROW)){
+    x += 3;
+    if (x > width){
+      x= 0
+    }
+    atrasoSprit++;
+    if (atrasoSprit >= 3) {
+       atrasoSprit = 0;
+       contSprit++;
+      if (contSprit >= 8){
+         contSprit = 0;
+      }
+    }
+  }
+  if(keyIsDown(LEFT_ARROW)){
+    x -= 3;
+    if (x > width){
+      x= 0
+    }
+    atrasoSprit++;
+    if (atrasoSprit >= 3) {
+       atrasoSprit = 0;
+       contSprit++;
+      if (contSprit >= 8){
+         contSprit = 0;
+      }
+    }
+  }
+}
